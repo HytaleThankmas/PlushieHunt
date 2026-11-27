@@ -1,0 +1,10 @@
+{
+  "Group": "Melodic",
+  "Name": "PlushieHunt",
+  "Description": "Tracks hidden plushies each player has found through trigger volumes",
+  "Version": "1.0.0",
+  "Authors": [{ "Name": "MelodicAlbuild" }],
+  "Main": "com.melodic.plushiehunt.PlushieHuntPlugin",
+  "ServerVersion": "^0.7.4",
+  "Dependencies": { "Hytale:TriggerVolumes": "*" }
+}
