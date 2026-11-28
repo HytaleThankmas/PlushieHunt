@@ -10,6 +10,7 @@ import com.hypixel.hytale.protocol.packets.world.ServerSetBlock;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
+import com.hypixel.hytale.server.core.universe.world.storage.ChunkGrid;
 import dev.hardaway.wardrobe.impl.player.PlayerWardrobeComponent;
 import dev.rm20.thankmasvault.economy.EconomyAPI;
 import org.joml.Vector3d;
@@ -98,6 +99,7 @@ public class FindPlushieEffect extends TriggerEffect {
     public static void hideBlockForPlayer(PlayerRef playerRef, Vector3d pos) {
         if (playerRef == null || pos == null) return;
         ServerSetBlock fakeAirPacket = new ServerSetBlock(
+                ChunkGrid.MAIN_CHUNK_GRID_NETWORK_ID,
                 (int) Math.floor(pos.x),
                 (int) Math.floor(pos.y),
                 (int) Math.floor(pos.z),

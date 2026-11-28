@@ -32,5 +32,5 @@ java {
 
 dependencies {
     compileOnly(project(":plugins:thankmas-vault"))
-    compileOnly(files("../../libs/Wardrobe-0.3.5+0.7.2.jar"))
+    compileOnly(files("../../libs/Wardrobe-0.3.5+0.8.0-pre.7.jar"))
 }

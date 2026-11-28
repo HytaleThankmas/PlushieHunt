@@ -9,6 +9,7 @@ import com.hypixel.hytale.protocol.packets.world.ServerSetBlock;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.chunk.section.BlockSection;
+import com.hypixel.hytale.server.core.universe.world.storage.ChunkGrid;
 import org.joml.Vector3d;
 
 import javax.annotation.Nonnull;
@@ -118,7 +119,7 @@ public class PlushieManager {
                 int blockId = blockSection.get(blockIndex);
                 short filler = (short) blockSection.getFiller(blockIndex);
                 byte rotation = (byte) blockSection.getRotationIndex(blockIndex);
-                ServerSetBlock packet = new ServerSetBlock(bx, by, bz, blockId, filler, rotation);
+                ServerSetBlock packet = new ServerSetBlock(ChunkGrid.MAIN_CHUNK_GRID_NETWORK_ID, bx, by, bz, blockId, filler, rotation);
                 playerRef.getPacketHandler().writeNoCache(packet);
             }
         }
